@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Legacy</title>
-	<meta name="description" content="Legacy: A novel 4x strategy game.">
+	<title>Legacy Development Update 1 | DAX Interactive</title>
+	<meta name="description" content="The first development update for Legacy: a turn-based strategy game where terrain shapes the battle and player choices shape a civilisation.">
 	<link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -12,28 +12,66 @@
 		<a class="name" href="/">DAX Interactive</a>
 		<nav><a href="/legacy/">Legacy</a></nav>
 	</header>
+
 	<main>
-		<h1>Legacy</h1>
-		<p class="lead">A novel 4x strategy game in development for Windows and Mac. The game features a more tactical scope. This is it's development blog</p>
-			<h2>Scope</h2>
-			<p>Legacy is a turn based strategy game set on a procedurally generated hex planet. Its terrain shapes every decision: mountains create barriers and vantage points, rivers channel armies toward crossings, and cities grow across the land as players build quarters and improvements.</p>
-			<p>You begin with a people whose identity is still taking shape. The choices you make in settlement, research, trade and war move your civilisation along different paths, unlock its civics and influence how it is remembered. At each age transition, the game reflects that history through your civilisation’s standing, its heir or revolution, and the deeds that may become legendary.</p>
-			<p>Legacy brings together tactical, map-driven warfare and a history that grows from the player’s own choices. Its world is invented, but its technologies and civic development follow an earth-adjacent progression. The long-term contest is for legacy: when the world ends in a cataclysm, the civilisation with the greatest legacy wins—unless conquest decides the outcome first.</p>
-			<p>The game is being built in Godot with a separate C# rules library designed for repeatable simulation and future multiplayer. The first public release is planned for single-player on Steam.</p>
+		<article>
+			<h1>Legacy Development Update: From Prototype to a Living World</h1>
+			<p class="lead">The tactical combat prototype is complete. Now the work is focused on bringing the wider game to life: cities, contested territory, civilisation identity and the turning points that shape a people’s history.</p>
 
-			<h2>Roadmap</h2>
-				<h3>Built: the tactical combat prototype</h3>
-				<p>The prototype tested whether terrain could make battles rewarding. It introduced the spherical hex map, height and river systems, armies of up to three units, tactical combat, local hotseat play and a basic computer opponent. The prototype is complete and has been playtested.</p>
-				<h3>In progress: the one-age vertical slice</h3>
-				<p>The current phase is building a playable section of the full game, from starting a new planet through its first age transition. It already includes the main settlement and growth loop, contested territory, war and peace, research, civilisation identity, civics, heirs and revolutions, and legendary deeds. Barbarians, city-states and trade with them are also part of the slice.</p>
-				<p>The next work is to bring the remaining pieces together: complete the computer opponents and front end, refine presentation and audio, then tune and playtest the slice end to end. The slice is intended to prove that terrain, player choices and a civilisation’s emerging identity form one satisfying loop.</p>
-				<h3>Planned: first release</h3>
-				<p>The first release is planned as a single-player game on Steam. It will expand the slice across all ages, add the legacy victory and tracker, and build toward a world-ending cataclysm with survival routes. It will also include computer opponents designed to understand terrain, armies and territory, plus saving and loading, tutorials, and release-quality art and audio.</p>
-				<h3>Later possibilities</h3>
-				<p>Online multiplayer is planned after the single-player release. Other longer-term possibilities include the full royal dynasty system, curated maps, additional cataclysms, a space-age layer, and buildings that reshape the land. These are later ambitions, and their timing may change as the core game develops.</p>
+			<p>Legacy began with a question: can a strategy game make terrain matter in every battle, while letting a civilisation’s identity grow out of the choices its player makes?</p>
 
-		<p><a href="/stepquest/privacy/">Privacy policy</a></p>
+			<p>The first prototype set out to answer the combat half. It put armies on a spherical hex map of cliffs, high ground, rivers and narrow crossings, then tested whether a smaller force could win by choosing its ground well. That prototype is now complete. Playtesting helped tune the combat, and the project has moved on to a much bigger challenge: building the first playable version of the full game loop.</p>
+
+			<figure>
+				<img src="/legacy/resources/1/battlefield.jpg" alt="Armies approach a river crossing through rugged terrain">
+				<figcaption>A battlefield where rivers, high ground and narrow passes shape the fight.</figcaption>
+			</figure>
+
+			<h2>Building a civilisation, one age at a time</h2>
+
+			<p>The current development phase is a one-age vertical slice: a compact, end-to-end section of the game designed to test whether its main systems work together.</p>
+
+			<p>Players can explore a generated planet, found cities and grow them across the map. They can develop quarters, work improvements, research technologies and contest disputed land. War can break out over provocations and seized improvements, while peace offers a chance to end a conflict.</p>
+
+			<p>A civilisation’s identity also begins to take shape through play. Actions move it along different identity paths and can unlock civics. As the age progresses, players build standing and face a transition that can bring an heir or a revolution. Great deeds make armies, cities and quarters candidates for legendary status; the strongest are crowned at the end of the age.</p>
+
+			<figure>
+				<img src="/legacy/resources/1/city.jpg" alt="A growing city with quarters and improvements across varied terrain">
+				<figcaption>Cities grow across the land, with choices about where to build and how densely to develop.</figcaption>
+			</figure>
+
+			<figure>
+				<img src="/legacy/resources/1/identity-and-civics.jpg" alt="Legacy's civilisation identity and civics interface">
+				<figcaption>A civilisation’s identity develops through its actions and the civics it unlocks.</figcaption>
+			</figure>
+
+			<figure>
+				<img src="/legacy/resources/1/age-transition.jpg" alt="The age transition showing civilisation standing, heirs and legendary candidates">
+				<figcaption>At an age transition, the game reflects the history players have made.</figcaption>
+			</figure>
+
+			<h2>What’s in the slice so far</h2>
+
+			<p>The settlement and growth loop is playable, with two computer players able to expand and build. Territory, war and peace, technology, roads and connected resources, unit upgrades and army traditions have been added. Civilisation identity, civics, age transitions and legendary crowning are also in place.</p>
+
+			<p>The slice has since expanded to include barbarians and city-states, with trade deals available with city-states. The work now is focused on bringing the remaining pieces together: completing the computer opponents and front end, refining presentation and audio, and then tuning and playtesting the full slice from a new game through its first age transition.</p>
+
+			<figure>
+				<img src="/legacy/resources/1/generated-world.jpg" alt="A procedurally generated Legacy planet with varied terrain and explored regions">
+				<figcaption>Each game takes place on a new, procedurally generated planet.</figcaption>
+			</figure>
+
+			<h2>Built for a larger game</h2>
+
+			<p>Legacy is being developed in Godot with a C# rules library that runs separately from the visuals. The simulation is designed to be repeatable: the same starting seed and player actions should produce the same game. That foundation supports reliable replays and testing, and is intended to make online play possible later without rebuilding the game’s rules.</p>
+
+			<p>The first public release is planned as a single-player game for Steam. It is intended to include all ages, a legacy victory, and a cataclysm that gives each civilisation a final chance to secure its place in history. Online multiplayer, the full royal dynasty system, curated maps and a space-age layer are longer-term plans.</p>
+
+			<p>There is still plenty to build. The immediate goal is to finish the one-age slice and see whether its central idea holds up in play: the land shapes how you play, and how you play shapes who your civilisation becomes.</p>
+
+		</article>
 	</main>
+
 	<footer>© 2026 DAX Interactive</footer>
 </body>
 </html>
