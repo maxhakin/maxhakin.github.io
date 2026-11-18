@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Quiltz · Case study</title>
+	<meta name="description" content="Case study: Quiltz, a cosy strategy game for iPhone taken from empty folder to TestFlight in six days.">
+	<!-- Shared with clients by link only; kept out of search results. -->
+	<meta name="robots" content="noindex, nofollow">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap">
+	<link rel="stylesheet" href="/style.css">
+	<link rel="stylesheet" href="/quiltz/quiltz.css">
+	<link rel="stylesheet" href="/portfolio/quiltz/case.css">
+</head>
+<body class="quiltz case">
+	<header>
+		<span class="crumbs"><a class="name" href="/portfolio/">Max Hakin</a> <span aria-hidden="true">/</span> <span>Case study</span></span>
+		<nav><a href="/portfolio/">← All work</a></nav>
+	</header>
+	<main>
+		<section class="hero">
+			<div>
+				<span class="kicker">Case study · Mobile game</span>
+				<h1>Quiltz</h1>
+				<hr class="stitch-rule">
+				<p class="lead">A cosy strategy game for iPhone, taken from an empty folder to a signed build on TestFlight in six days.</p>
+				<span class="badge">In external testing · App Store launch next</span>
+				<dl class="meta panel">
+					<div><dt>Platform</dt><dd>iPhone, iOS 18+, portrait</dd></div>
+					<div><dt>My role</dt><dd>Product owner, designer and developer</dd></div>
+					<div><dt>Timeline</dt><dd>6 days to TestFlight, then 5 test builds</dd></div>
+					<div><dt>When</dt><dd>November 2026</dd></div>
+				</dl>
+			</div>
+			<div class="screenshots">
+				<img src="/portfolio/quiltz/images/three-players.png" width="430" height="932" alt="A three-player game of Quiltz: two opponents' boards along the top, wicker baskets of fabric patches in the middle, and the player's own stitching rows and quilt at the bottom.">
+				<img src="/portfolio/quiltz/images/four-players.png" width="430" height="932" alt="A four-player game of Quiltz with patches selected and the cells they would fill highlighted on the player's board.">
+			</div>
+		</section>
+
+		<section class="section">
+			<h2>The short version</h2>
+			<hr class="stitch-rule">
+			<div class="prose">
+				<p>Quiltz is a turn-based tile-drafting game with a quilting theme. Players take patches of fabric from shared baskets, stitch them into rows and build up a 5×5 quilt to score points. You can play alone against three levels of computer opponent, pass one phone around the table, play with friends on nearby iPhones without Wi-Fi or internet, or play live online through Game Center.</p>
+				<p>It was built from scratch in under a week. That covers the rules engine, the computer opponents, the art and animation, sound and music, ads, in-app purchases, a privacy-compliant consent flow, three kinds of multiplayer, and App Store signing and delivery.</p>
+			</div>
+			<ul class="stats" style="margin-top: 28px">
+				<li class="panel"><b>18k</b><span>lines of GDScript game code</span></li>
+				<li class="panel"><b>1.3k</b><span>lines of Swift, Obj-C++ and C++</span></li>
+				<li class="panel"><b>231</b><span>automated tests in 17 suites</span></li>
+				<li class="panel"><b>5</b><span>builds shipped to TestFlight</span></li>
+				<li class="panel"><b>0</b><span>servers to run or pay for</span></li>
+			</ul>
+		</section>
+
+		<section class="section">
+			<h2>What I built</h2>
+			<hr class="stitch-rule">
+
+			<div class="feature">
+				<div>
+					<h3><span class="patch stripes" aria-hidden="true"></span>A complete single-player game</h3>
+					<ul>
+						<li><b>A deterministic rules engine.</b> Every rule lives in one place and can be tested on its own. One random seed plus a list of moves always replays exactly the same game, which save and resume, the tests and online play all rely on.</li>
+						<li><b>Three computer opponents.</b> Easy plays mostly at random but avoids blunders. Medium takes the best-looking move. Hard tries its 14 best candidates on copies of the game, plays out the round for each, and picks the one that leaves it furthest ahead of its strongest rival, without ever peeking at the next deal.</li>
+						<li><b>An interactive tutorial</b> that is a real match from a hand-made position, with a guide ringing the cells to tap. It can never drift out of step with the real rules.</li>
+						<li><b>A rules reference, save and resume,</b> and settings for sound, music volume, text size and reduced motion.</li>
+					</ul>
+					<ul class="versus" aria-label="AI results">
+						<li><span class="label"><span>Medium vs Easy</span><span>38 of 40 won</span></span><span class="bar"><i style="width: 95%"></i></span></li>
+						<li><span class="label"><span>Hard vs Medium</span><span>30 of 30 won</span></span><span class="bar"><i style="width: 100%"></i></span></li>
+						<li><span class="label"><span>Hard, average move time on iPhone 12 Pro Max</span><span>58 ms of 450 ms</span></span><span class="bar"><i style="width: 13%"></i></span></li>
+					</ul>
+				</div>
+				<figure class="phone tilt-r" style="margin: 0">
+					<img src="/portfolio/quiltz/images/tutorial.png" width="430" height="932" alt="The interactive tutorial: a guide card explains the baskets while the first basket's stripes patches are ringed to tap.">
+					<figcaption>The tutorial runs on the real rules.</figcaption>
+				</figure>
+			</div>
+
+			<div class="feature flip">
+				<figure class="phone tilt-l" style="margin: 0">
+					<img src="/portfolio/quiltz/images/scoring.png" width="430" height="932" alt="A thread of stitching runs along the patches that score on the player's quilt, with the score shown as 12.">
+					<figcaption>Scoring is sewn in front of you.</figcaption>
+				</figure>
+				<div>
+					<h3><span class="patch dots" aria-hidden="true"></span>A handcrafted look and feel</h3>
+					<p class="muted" style="margin-top: 0">The art direction is "cosy stitched craft": a wooden sewing table, linen boards with a running stitch, wicker baskets, a green cutting mat and printed-cotton patches.</p>
+					<ul>
+						<li><b>All art is generated in code.</b> Fabric patches, textures and the app icon come from SVG and Python scripts, so a change is an edit and a re-run, and everything stays consistent.</li>
+						<li><b>Sewing-machine scoring.</b> A line of stitching sews itself across the patches that score, with a tick for each stitch and a tag showing the points earned.</li>
+						<li><b>Sound design.</b> A soft thud for each patch landing, a chime for the thimble, and an optional acoustic music loop that ducks quietly under other sounds.</li>
+						<li><b>Accessibility.</b> Reduced-motion versions of every animation, three text sizes, 44 pt touch targets, and selection shown by outline as well as colour.</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="feature">
+				<div>
+					<h3><span class="patch chevrons" aria-hidden="true"></span>Swappable themes</h3>
+					<p class="muted" style="margin-top: 0">Everything you see and hear comes from a theme: piece names, colours, pictures, words, stitching, animation style, sounds and music. Nothing about the theme touches the rules, and an automated test checks that the game logic never refers to one.</p>
+					<ul>
+						<li><b>Two themes ship:</b> <i>Quilting Bee</i>, the default, and <i>Plain Tiles</i>, a high-contrast version with no images.</li>
+						<li><b>The first paid pack,</b> <i>Koi Pond</i> (fish, lily pads and water sounds), is planned as mostly data plus a little code, without a rewrite.</li>
+					</ul>
+					<h3 style="margin-top: 32px"><span class="patch checks" aria-hidden="true"></span>Monetisation that respects the player</h3>
+					<ul>
+						<li><b>Google AdMob</b> banners on menu screens only, never in a match, and an occasional full-screen ad between matches: none in the first two, then at most one every two matches and three minutes.</li>
+						<li><b>A 99p "Remove Ads" purchase</b> with Restore Purchases. Buying any theme pack also removes ads.</li>
+						<li><b>Privacy done properly.</b> Google's consent form for UK and EU players appears before Apple's tracking prompt, with a written privacy policy and a privacy manifest. The game collects no personal data of its own.</li>
+						<li><b>Offline-safe purchases,</b> recorded on the phone first, with late arrivals handled: Ask to Buy approvals, purchases on another device, and refunds.</li>
+					</ul>
+				</div>
+				<figure class="phone tilt-r" style="margin: 0">
+					<img src="/portfolio/quiltz/images/round-summary.png" width="430" height="932" alt="The round summary in a four-player game, listing points gained, lost and each player's score.">
+					<figcaption>A four-player round summary.</figcaption>
+				</figure>
+			</div>
+
+			<div class="mat">
+				<h2>Three ways to play together</h2>
+				<p>Network play is the most technically interesting part of the project, and none of it needs a server.</p>
+				<div class="mat-grid">
+					<div>
+						<h3>Pass and play</h3>
+						<p>One phone, 2–4 seats, any mix of people and computers. The active player's board moves to the big position with a short "Sam's turn" banner.</p>
+					</div>
+					<div>
+						<h3>Nearby</h3>
+						<p>Phones find each other directly over Wi-Fi and Bluetooth using Apple's Multipeer Connectivity. No router or internet needed.</p>
+					</div>
+					<div>
+						<h3>Online</h3>
+						<p>Live matches with friends or strangers through Apple Game Center, with a 45-second turn timer.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<h2>Key decisions, and why</h2>
+			<hr class="stitch-rule">
+			<p class="intro">Good software comes as much from the decisions as from the code. I kept a written decision log for the whole project, with over 40 entries, each recording what was chosen and why. These are the ones that mattered most.</p>
+
+			<ol class="decisions">
+				<li class="panel wide">
+					<h3>A strict layered architecture</h3>
+					<p>Each layer may only use the layers below it. The rules core knows nothing about screens, timers, networks or iPhones.</p>
+					<ul class="layers" style="margin-top: 16px" aria-label="Architecture layers, top to bottom">
+						<li class="l-ui"><code>ui/</code><span>Screens and widgets</span></li>
+						<li class="l-match"><code>match/</code><span>Turn flow and the network protocol</span></li>
+						<li class="l-ai"><code>ai/</code><span>Computer opponents</span></li>
+						<li class="l-core"><code>core/</code><span>Rules and game state: no UI, no timing, no platform code</span></li>
+						<li class="side">
+							<span><code>themes/</code><small>Look and sound, as data</small></span>
+							<span><code>services/</code><small>Save, settings, audio, ads, store, network</small></span>
+							<span><code>native/</code><small>My own iOS plugin</small></span>
+						</li>
+					</ul>
+					<p class="why"><b>Why:</b> the same rules code runs single-player games, the tutorial, saved games, the AI's look-ahead, the tests and live multiplayer. When multiplayer was added on day six, the rules did not need a single change.</p>
+				</li>
+				<li class="panel">
+					<h3>Every platform feature behind an interface that can do nothing</h3>
+					<p>Ads, the store and networking are each a small base class that does nothing, with an iPhone-specific version that overrides it.</p>
+					<p class="why"><b>Why:</b> the whole game, Shop and multiplayer included, runs and is tested on a laptop with no phone, ad network or App Store account. Android later means new versions of these classes, not a rewrite.</p>
+				</li>
+				<li class="panel">
+					<h3>Writing my own native iOS plugin</h3>
+					<p>No existing StoreKit 2 plugin for this Godot version was reliable, so I wrote <b>QuiltzNative</b>, a C++ Godot extension wrapping small Swift and Objective-C++ bridges. It carries StoreKit 2, Google's privacy form, Multipeer Connectivity and Game Center.</p>
+					<p class="why"><b>Why:</b> one plugin I control instead of four third-party ones that might stop being updated, and multiplayer later became an addition, not a fresh start.</p>
+				</li>
+				<li class="panel wide">
+					<h3>Multiplayer with no game server</h3>
+					<p>The host phone is in charge, and every phone runs the same deterministic rules from the same seed.</p>
+					<ul>
+						<li>Players send move requests. The host checks each is legal, applies it, and sends it to everyone with a sequence number.</li>
+						<li>After every move, each phone compares a short hash of its state with the host's, and asks for the full state if they differ.</li>
+						<li>If a player drops out, a computer takes their seat until they reconnect.</li>
+						<li>If the host drops out, the next player in turn order becomes host and play carries on, because every phone holds the full game.</li>
+						<li>Messages are small, versioned JSON, so an out-of-date copy is told to update rather than quietly falling out of step.</li>
+					</ul>
+					<p class="why"><b>Why:</b> no hosting bills, no backend to secure or maintain, and nearby play works with no internet at all. It was all tested first over a simulated network that drops, repeats and shuffles messages on purpose, before it ran on two real iPhones.</p>
+				</li>
+				<li class="panel">
+					<h3>Mockups first, then build</h3>
+					<p>Before rebuilding any screen, I made interactive HTML mockups with two or three options each: three art directions, and several ways to fit three opponents' boards on a small phone.</p>
+					<p class="why"><b>Why:</b> a design decision costs minutes at the mockup stage and days once built. I changed my mind on the layout once after seeing both on a real phone, and switching back is still a one-line change.</p>
+				</li>
+				<li class="panel">
+					<h3>Tests with every step, docs in the same change</h3>
+					<p>Every milestone added tests, and the whole suite had to pass before moving on. The architecture document, roadmap and release checklist are updated in the same commit as the code.</p>
+					<p class="why"><b>Why:</b> a project built this quickly only stays manageable if the safety net grows with it. Anyone can pick it up from the documents alone.</p>
+				</li>
+			</ol>
+		</section>
+
+		<section class="section">
+			<h2>How the project was run</h2>
+			<hr class="stitch-rule">
+			<p class="intro">A phased roadmap, with each phase signed off on a real iPhone before the next began, and an honest list of what had been checked and what had not.</p>
+			<ol class="roadmap">
+				<li><span class="patch stripes" aria-hidden="true"></span><div><h3>Rules and core game</h3><p>Deterministic engine, AI opponents, save and resume.</p></div></li>
+				<li><span class="patch dots" aria-hidden="true"></span><div><h3>Layout overhaul</h3><p>Every screen reworked for one-handed play on small phones.</p></div></li>
+				<li><span class="patch chevrons" aria-hidden="true"></span><div><h3>Aesthetics</h3><p>Textures, stitching, animation, sound and music.</p></div></li>
+				<li><span class="patch checks" aria-hidden="true"></span><div><h3>Monetisation</h3><p>Ads, purchases, privacy and compliance.</p></div></li>
+				<li><span class="patch florals" aria-hidden="true"></span><div><h3>Multiplayer</h3><p>Pass and play, then nearby, then online.</p></div></li>
+				<li class="todo"><span class="patch stripes" aria-hidden="true"></span><div><h3>Launch <span class="tag">Next</span></h3><p>App Store submission.</p></div></li>
+				<li class="todo"><span class="patch dots" aria-hidden="true"></span><div><h3>First theme pack <span class="tag">After launch</span></h3><p>Koi Pond.</p></div></li>
+			</ol>
+		</section>
+
+		<section class="section">
+			<h2>Tools and technologies</h2>
+			<hr class="stitch-rule" style="margin-bottom: 24px">
+			<div class="panel tools">
+				<table>
+					<tr><th>Game engine</th><td>Godot 4.7 with GDScript, Compatibility renderer</td></tr>
+					<tr><th>Native iOS</th><td>Swift, Objective-C++ and C++ via a Godot GDExtension (godot-cpp)</td></tr>
+					<tr><th>Apple frameworks</th><td>StoreKit 2, Multipeer Connectivity, GameKit / Game Center, App Tracking Transparency</td></tr>
+					<tr><th>Ads and consent</th><td>Google Mobile Ads SDK (AdMob) and Google User Messaging Platform, via Swift Package Manager</td></tr>
+					<tr><th>Build and release</th><td>Xcode, code signing and provisioning, App Store Connect, TestFlight</td></tr>
+					<tr><th>Art and audio</th><td>SVG and Python scripts for generated art and synthesised sounds; licensed sound effects</td></tr>
+					<tr><th>Typography</th><td>Nunito (Open Font License), with licence notices built into an in-game screen automatically</td></tr>
+					<tr><th>Testing</th><td>A custom headless test runner, simulated networks for multiplayer, and scripted screenshots of every screen</td></tr>
+					<tr><th>Project management</th><td>Git, a phased roadmap with milestones, and a decision log</td></tr>
+					<tr><th>Approach</th><td>AI-assisted development with Claude Code, with me setting direction, making every product decision and testing on a real device</td></tr>
+				</table>
+			</div>
+		</section>
+
+		<section class="section">
+			<h2>What this shows I can do for you</h2>
+			<hr class="stitch-rule" style="margin-bottom: 24px">
+			<div class="shows">
+				<div class="panel"><h3>Take an idea all the way to the store</h3><p>Design, build, test, sign, upload and the App Store paperwork, not just a prototype.</p></div>
+				<div class="panel"><h3>Integrate the hard parts</h3><p>Payments, ads, consent and privacy rules, real-time networking and native platform code.</p></div>
+				<div class="panel"><h3>Make sound architecture decisions</h3><p>Choices that keep a product cheap to run and easy to extend.</p></div>
+				<div class="panel"><h3>Work quickly without cutting corners</h3><p>Over 230 automated tests, documentation that stays current, and decisions written down with their reasons.</p></div>
+				<div class="panel"><h3>Care about the user</h3><p>Accessibility, sensible ad limits, offline-friendly purchases and no unnecessary data collection.</p></div>
+			</div>
+		</section>
+
+		<section class="closing">
+			<h2>Want something similar built?</h2>
+			<p>Whether it's a mobile app, a game, or software that needs payments, multiplayer or tricky platform integrations, I'd be happy to talk it through.</p>
+			<a class="button" href="mailto:dax.interactive.support@gmail.com?subject=Project%20enquiry">Get in touch</a>
+			<a class="secondary" href="/portfolio/">← Back to all work</a>
+		</section>
+	</main>
+	<footer>© 2026 Max Hakin · DAX Interactive</footer>
+</body>
+</html>

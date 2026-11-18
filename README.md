@@ -10,3 +10,5 @@ Plain HTML and one stylesheet (`style.css`); no build step. Pages:
 - `quiltz/index.html`: about Quiltz (screenshots in `quiltz/images/`)
 - `quiltz/privacy/index.html`: Quiltz's privacy policy (its address goes in the game's Settings and App Store Connect, so don't move it)
 - `legacy/index.html`: about Legacy
+- `portfolio/index.html`: client portfolio home (own style in `portfolio/portfolio.css`). Deliberately not linked from the rest of the site, and marked `noindex` so search engines skip it; share the link directly.
+- `portfolio/quiltz/index.html`: Quiltz case study (Quiltz styles plus `portfolio/quiltz/case.css`, screenshots in `portfolio/quiltz/images/`)
