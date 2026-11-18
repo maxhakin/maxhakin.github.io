@@ -1,0 +1,249 @@
+/* Quiltz page: a sewing-table look on top of the site's style.css.
+   Only applies to pages with <body class="quiltz">. */
+.quiltz {
+	--background: #f4e6d2;
+	--surface: #fffaf1;
+	--text: #3a2a1e;
+	--muted: #7a6450;
+	--accent: #9a5b2e;
+	--border: #e2cfb4;
+	--wood: #7b5a3c;
+	--thread: #a8794f;
+	--mat: #2f7d68;
+	--mat-text: #f2fbf6;
+	--stripes: #e2b03c;
+	--dots: #3d8fd4;
+	--chevrons: #1f8a6a;
+	--checks: #d9542e;
+	--florals: #b44a9a;
+
+	font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	/* faint linen weave */
+	background-color: var(--background);
+	background-image:
+		repeating-linear-gradient(0deg, rgba(120, 80, 40, .035) 0 1px, transparent 1px 4px),
+		repeating-linear-gradient(90deg, rgba(120, 80, 40, .035) 0 1px, transparent 1px 4px);
+}
+
+@media (prefers-color-scheme: dark) {
+	.quiltz {
+		--background: #241b15;
+		--surface: #33271e;
+		--text: #f4e6d2;
+		--muted: #c4ab92;
+		--accent: #e7b07c;
+		--border: #4a3a2d;
+		--wood: #e7b07c;
+		--thread: #b98b60;
+		--mat: #24604f;
+		background-image:
+			repeating-linear-gradient(0deg, rgba(255, 230, 200, .025) 0 1px, transparent 1px 4px),
+			repeating-linear-gradient(90deg, rgba(255, 230, 200, .025) 0 1px, transparent 1px 4px);
+	}
+}
+
+.quiltz main { max-width: 960px; }
+.quiltz header, .quiltz footer { max-width: 960px; }
+.quiltz header .name { color: var(--wood); }
+.quiltz h1, .quiltz h2, .quiltz h3 { font-weight: 800; letter-spacing: -0.01em; }
+
+/* A running stitch, used as a divider and around panels. */
+.stitch-rule {
+	height: 0;
+	border: 0;
+	border-top: 2px dashed var(--thread);
+	margin: 8px 0 0;
+	width: 160px;
+}
+
+/* ---- Hero ---- */
+.hero {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 32px;
+	align-items: center;
+	padding: 24px 0 16px;
+}
+.hero h1 {
+	font-size: clamp(52px, 9vw, 80px);
+	line-height: 1;
+	margin: 0;
+	color: var(--text);
+}
+.hero .lead { font-size: 21px; color: var(--muted); margin: 20px 0; }
+
+.badge {
+	display: inline-block;
+	background: var(--surface);
+	border: 2px dashed var(--thread);
+	border-radius: 999px;
+	padding: 6px 16px;
+	font-weight: 700;
+	font-size: 15px;
+	color: var(--wood);
+}
+
+.swatches { display: flex; gap: 10px; margin: 24px 0 0; padding: 0; list-style: none; }
+
+/* ---- Fabric patches, drawn in CSS ---- */
+.patch {
+	position: relative;
+	width: 44px;
+	height: 44px;
+	border-radius: 8px;
+	box-shadow: 0 2px 0 rgba(0, 0, 0, .12), 0 4px 10px rgba(80, 50, 20, .18);
+	flex: none;
+	margin: 0;
+}
+.patch::after { /* white stitched hem */
+	content: "";
+	position: absolute;
+	inset: 4px;
+	border: 1.5px dashed rgba(255, 255, 255, .85);
+	border-radius: 5px;
+}
+.patch.stripes {
+	background: repeating-linear-gradient(0deg, var(--stripes) 0 5px, #f7dd97 5px 8px);
+}
+.patch.dots {
+	background: radial-gradient(circle, #e8f3ff 0 2.5px, transparent 3px) 0 0 / 11px 11px, var(--dots);
+}
+.patch.chevrons {
+	background:
+		linear-gradient(135deg, #bfe8d9 25%, transparent 25%) -6px 0 / 12px 12px,
+		linear-gradient(225deg, #bfe8d9 25%, transparent 25%) -6px 0 / 12px 12px,
+		linear-gradient(315deg, #bfe8d9 25%, transparent 25%) 0 0 / 12px 12px,
+		linear-gradient(45deg, #bfe8d9 25%, transparent 25%) 0 0 / 12px 12px,
+		var(--chevrons);
+}
+.patch.checks {
+	background: conic-gradient(var(--checks) 25%, #f6c7b6 0 50%, var(--checks) 0 75%, #f6c7b6 0) 0 0 / 22px 22px;
+}
+.patch.florals {
+	background:
+		radial-gradient(circle, #ffe9f7 0 3px, transparent 3.5px) 0 0 / 14px 14px,
+		radial-gradient(circle, #f3c0e1 0 2px, transparent 2.5px) 7px 7px / 14px 14px,
+		var(--florals);
+}
+
+/* ---- Screenshots, laid on the table like two cards ---- */
+.quiltz .screenshots { position: relative; margin: 0; gap: 0; padding: 16px 0 24px; }
+.quiltz .screenshots img {
+	max-width: 230px;
+	border: 6px solid var(--surface);
+	border-radius: 22px;
+	box-shadow: 0 18px 40px rgba(70, 40, 15, .28);
+}
+.quiltz .screenshots img:first-child { transform: rotate(-4deg) translateX(14px); z-index: 1; }
+.quiltz .screenshots img:last-child { transform: rotate(4deg) translate(-14px, 22px); }
+
+/* ---- Sections ---- */
+.section { margin: 56px 0 0; }
+.section > h2 { font-size: 30px; line-height: 1.2; margin: 0; }
+.section > .stitch-rule { margin-bottom: 24px; }
+
+.steps {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 16px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	counter-reset: step;
+}
+
+/* A linen panel with a stitched border, like the game's boards. */
+.panel {
+	position: relative;
+	background: var(--surface);
+	border-radius: 14px;
+	padding: 22px 22px 18px;
+	box-shadow: 0 1px 0 var(--border), 0 6px 18px rgba(80, 50, 20, .08);
+}
+.panel::before {
+	content: "";
+	position: absolute;
+	inset: 6px;
+	border: 1.5px dashed var(--thread);
+	border-radius: 10px;
+	opacity: .55;
+	pointer-events: none;
+}
+.panel h3 { font-size: 19px; margin: 8px 0 6px; }
+.panel p { margin: 0; color: var(--muted); font-size: 16px; }
+
+.steps .panel::after {
+	counter-increment: step;
+	content: counter(step);
+	position: absolute;
+	top: -14px;
+	left: 18px;
+	width: 32px;
+	height: 32px;
+	display: grid;
+	place-items: center;
+	border-radius: 50%;
+	background: var(--wood);
+	color: var(--surface);
+	font-weight: 800;
+	font-size: 16px;
+}
+
+.features {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 16px;
+}
+.features .panel { display: flex; gap: 16px; align-items: flex-start; }
+.features .patch { width: 36px; height: 36px; margin-top: 4px; }
+.features h3 { margin-top: 0; }
+
+/* The cutting mat band */
+.mat {
+	margin: 56px 0 0;
+	background-color: var(--mat);
+	background-image:
+		linear-gradient(rgba(255, 255, 255, .09) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, .09) 1px, transparent 1px);
+	background-size: 24px 24px;
+	color: var(--mat-text);
+	border-radius: 18px;
+	padding: 28px;
+}
+.mat h2 { margin: 0 0 8px; font-size: 26px; }
+.mat p { margin: 0; opacity: .92; }
+.modes { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 18px 0 0; }
+.modes li {
+	margin: 0;
+	padding: 6px 14px;
+	border: 1.5px dashed rgba(255, 255, 255, .7);
+	border-radius: 999px;
+	font-weight: 700;
+	font-size: 15px;
+}
+
+.closing { text-align: center; margin: 56px 0 0; }
+.closing p { color: var(--muted); margin: 0 0 18px; }
+.button {
+	display: inline-block;
+	background: var(--wood);
+	color: var(--surface);
+	font-weight: 800;
+	text-decoration: none;
+	padding: 12px 24px;
+	border-radius: 10px;
+}
+.button:hover { filter: brightness(1.08); }
+
+/* ---- Phones ---- */
+@media (max-width: 720px) {
+	.hero { grid-template-columns: 1fr; gap: 8px; text-align: center; }
+	.hero .stitch-rule { margin-left: auto; margin-right: auto; }
+	.swatches { justify-content: center; }
+	.steps, .features { grid-template-columns: 1fr; }
+	.steps { gap: 28px; }
+	.quiltz .screenshots img { max-width: 48%; }
+	.quiltz .screenshots img:first-child { transform: rotate(-3deg) translateX(6px); }
+	.quiltz .screenshots img:last-child { transform: rotate(3deg) translate(-6px, 16px); }
+	.mat { padding: 22px 20px; }
+}

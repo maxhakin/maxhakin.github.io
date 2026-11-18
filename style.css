@@ -83,3 +83,21 @@ footer {
 	color: var(--muted);
 	font-size: 15px;
 }
+
+/* Phone screenshots side by side; they shrink to fit narrow screens. */
+.screenshots {
+	display: flex;
+	gap: 16px;
+	justify-content: center;
+	margin: 24px 0;
+}
+.screenshots img {
+	width: 100%;
+	max-width: 260px;
+	min-width: 0;
+	height: auto;
+	border-radius: 16px;
+	border: 1px solid var(--border);
+}
+
+li { margin: 4px 0; }
