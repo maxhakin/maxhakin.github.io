@@ -4,35 +4,94 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>DAX Interactive</title>
-	<meta name="description" content="DAX Interactive makes games.">
+	<meta name="description" content="DAX Interactive makes games: Quiltz and StepQuest for iPhone, and Legacy, a 4x strategy game in development.">
 	<link rel="stylesheet" href="/style.css">
+	<link rel="stylesheet" href="/home.css">
 </head>
-<body>
+<body class="home">
 	<header>
 		<a class="name" href="/">DAX Interactive</a>
-		<nav><a href="/stepquest/">StepQuest</a></nav>
+		<nav>
+			<a href="/quiltz/">Quiltz</a>
+			<a href="/stepquest/">StepQuest</a>
+			<a href="/legacy/">Legacy</a>
+		</nav>
 	</header>
 	<main>
-		<h1>DAX Interactive</h1>
-		<p class="lead">We make games.</p>
+		<section class="intro">
+			<h1>We make<br><span>games.</span></h1>
+			<p class="lead">Small, carefully made games for iPhone and computer, built by an independent studio.</p>
+		</section>
 
-		<div class="card">
-			<h2>Quiltz</h2>
-			<p>A cosy patchwork puzzle game for iPhone: pick fabric patches, fill your rows and stitch them into your quilt. Being tested now.</p>
-			<p><a href="/quiltz/">More about Quiltz</a></p>
+		<div class="games">
+			<a class="game wide" href="/quiltz/">
+				<div class="art quiltz" aria-hidden="true">
+					<img src="/quiltz/images/match-three-players.png" width="430" height="932" alt="">
+					<img src="/quiltz/images/match-four-players.png" width="430" height="932" alt="">
+				</div>
+				<div class="body">
+					<ul class="chips"><li class="live">In testing</li><li>iPhone</li></ul>
+					<h2>Quiltz</h2>
+					<p>A cosy patchwork puzzle game: pick fabric patches, fill your rows and stitch them into your quilt. Play solo, pass the phone around, or with friends nearby and online.</p>
+					<span class="go">More about Quiltz</span>
+				</div>
+			</a>
+
+			<a class="game" href="/stepquest/">
+				<div class="art stepquest" aria-hidden="true">
+					<svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice">
+						<circle cx="96" cy="74" r="24" fill="#ffd89a" opacity=".9"/>
+						<path d="M0 230 Q 120 190 200 214 T 400 196 V280 H0Z" fill="#3b2a55" opacity=".7"/>
+						<path d="M0 252 Q 140 222 240 240 T 400 228 V280 H0Z" fill="#241a38"/>
+						<path d="M30 262 C 110 236 150 196 220 186 S 300 150 318 120" fill="none" stroke="#ffe9c7" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round" opacity=".85"/>
+						<g fill="#ffe9c7">
+							<ellipse cx="70" cy="248" rx="5" ry="8" transform="rotate(-60 70 248)"/>
+							<ellipse cx="96" cy="232" rx="5" ry="8" transform="rotate(-50 96 232)"/>
+							<ellipse cx="140" cy="210" rx="5" ry="8" transform="rotate(-45 140 210)"/>
+							<ellipse cx="170" cy="198" rx="5" ry="8" transform="rotate(-65 170 198)"/>
+						</g>
+						<g fill="#ffcf5a" stroke="#b9852a" stroke-width="2">
+							<circle cx="214" cy="176" r="8"/>
+							<circle cx="250" cy="166" r="8"/>
+							<circle cx="282" cy="150" r="8"/>
+						</g>
+						<g fill="#1a1330">
+							<rect x="300" y="88" width="36" height="70" rx="2"/>
+							<rect x="296" y="78" width="10" height="14"/>
+							<rect x="313" y="78" width="10" height="14"/>
+							<rect x="330" y="78" width="10" height="14"/>
+							<rect x="313" y="132" width="10" height="26" rx="5" fill="#ffd89a"/>
+						</g>
+					</svg>
+				</div>
+				<div class="body">
+					<ul class="chips"><li class="live">In testing</li><li>iPhone</li></ul>
+					<h2>StepQuest</h2>
+					<p>A tower-defence game where the steps you walk earn the coins that build your defences.</p>
+					<span class="go">More about StepQuest</span>
+				</div>
+			</a>
+
+			<a class="game" href="/legacy/">
+				<div class="art legacy" aria-hidden="true">
+					<img src="/legacy/resources/1/generated-world.jpg" width="1155" height="649" alt="" loading="lazy">
+				</div>
+				<div class="body">
+					<ul class="chips"><li class="dev">In development</li><li>Windows &amp; Mac</li></ul>
+					<h2>Legacy</h2>
+					<p>A novel 4x strategy game with a tactical edge, played on a procedurally generated hex planet.</p>
+					<span class="go">Read the development blog</span>
+				</div>
+			</a>
 		</div>
 
-		<div class="card">
-			<h2>StepQuest</h2>
-			<p>A tower-defence game for iPhone where the steps you walk earn the coins that build your defences. Being tested now.</p>
-			<p><a href="/stepquest/">More about StepQuest</a></p>
-		</div>
-
-		<div class="card">
-			<h2>Legacy</h2>
-			<p>A novel 4x strategy game with a tactical edge.</p>
-			<p><a href="/legacy/">Legacy development blog</a></p>
-		</div>
+		<section class="about">
+			<h2>About the studio</h2>
+			<div>
+				<p>DAX Interactive is an independent games studio. We design, build and ship every game ourselves, from the rules and art through to the App Store.</p>
+				<p>Each game's page has its own privacy policy, explaining exactly what it does with your data.</p>
+			</div>
+		</section>
 	</main>
 	<footer>© 2026 DAX Interactive</footer>
 </body>
