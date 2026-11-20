@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>StepQuest · Case study</title>
+	<meta name="description" content="Case study: StepQuest, a tower-defence game for iPhone where the steps you walk pay for your defences, built for children with privacy designed in from the start.">
+	<!-- Shared with clients by link only; kept out of search results. -->
+	<meta name="robots" content="noindex, nofollow">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;600&display=swap">
+	<link rel="stylesheet" href="/portfolio/stepquest/case.css">
+</head>
+<body class="sq" id="top">
+	<div class="wrap">
+		<header class="bar">
+			<span class="crumbs"><a href="/portfolio/">DAX Interactive</a> / Case study</span>
+			<nav><a href="/portfolio/">← All work</a></nav>
+		</header>
+
+		<main>
+			<section class="hero">
+				<div>
+					<span class="kicker">Case study · Mobile game · Health data</span>
+					<h1>StepQuest</h1>
+					<p class="lead">A tower-defence game for iPhone where the steps you walk pay for your defences. Built for children, with their privacy designed in from the first page of the spec.</p>
+					<span class="status">In TestFlight testing · Milestone 6 of 8</span>
+					<dl class="meta">
+						<div><dt>Platform</dt><dd>iPhone first, Android-ready</dd></div>
+						<div><dt>Our role</dt><dd>Spec, design, build, testing and release</dd></div>
+						<div><dt>Started</dt><dd>24 October 2026</dd></div>
+						<div><dt>Stack</dt><dd>Godot 4, Swift, Supabase</dd></div>
+					</dl>
+				</div>
+
+				<figure class="map" style="margin: 0">
+					<svg viewBox="0 0 480 360" role="img" aria-labelledby="map-title">
+						<title id="map-title">An illustration of a StepQuest battlefield: three dirt roads lead to a castle in the centre, with towers on stone pads beside the roads, enemies walking in, and a trail of footprints along the bottom turning into coins.</title>
+						<rect width="480" height="360" style="fill: color-mix(in srgb, var(--grass) 22%, var(--surface))"/>
+						<!-- frost creeping in from the top corner -->
+						<path d="M0 0 H220 C170 30 120 40 80 90 C50 120 20 120 0 150 Z" style="fill: color-mix(in srgb, var(--frost) 18%, var(--surface))"/>
+						<!-- routes -->
+						<g style="fill: none; stroke: var(--route); stroke-width: 22; stroke-linecap: round; stroke-linejoin: round">
+							<path d="M-10 70 C80 70 120 150 220 160"/>
+							<path d="M490 60 C400 80 360 140 262 158"/>
+							<path d="M300 370 C300 300 280 240 248 196"/>
+						</g>
+						<g style="fill: none; stroke: color-mix(in srgb, var(--route) 60%, var(--ink)); stroke-width: 1.5; stroke-dasharray: 2 8; opacity: .5">
+							<path d="M-10 70 C80 70 120 150 220 160"/>
+							<path d="M490 60 C400 80 360 140 262 158"/>
+						</g>
+						<!-- build pads -->
+						<g style="fill: color-mix(in srgb, var(--stone) 30%, var(--surface)); stroke: var(--stone); stroke-width: 1.5">
+							<rect x="96" y="112" width="34" height="34" rx="6"/>
+							<rect x="150" y="76" width="34" height="34" rx="6"/>
+							<rect x="330" y="118" width="34" height="34" rx="6"/>
+							<rect x="316" y="214" width="34" height="34" rx="6"/>
+							<rect x="196" y="236" width="34" height="34" rx="6" stroke-dasharray="4 3"/>
+						</g>
+						<!-- towers: shooter (triangle), cannon (circle), frost (diamond), spark (star) -->
+						<polygon points="113,118 125,140 101,140" style="fill: var(--gold); stroke: var(--ink); stroke-width: 1.5"/>
+						<circle cx="167" cy="93" r="11" style="fill: var(--stone); stroke: var(--ink); stroke-width: 1.5"/>
+						<polygon points="347,122 359,135 347,148 335,135" style="fill: var(--frost); stroke: var(--ink); stroke-width: 1.5"/>
+						<polygon points="333,218 336,227 345,227 338,233 341,242 333,236 325,242 328,233 321,227 330,227" style="fill: #e0b53a; stroke: var(--ink); stroke-width: 1.5"/>
+						<!-- frost ring and a spark chain -->
+						<circle cx="347" cy="135" r="44" style="fill: var(--frost); opacity: .1"/>
+						<path d="M333 230 L300 188 L282 202" style="fill: none; stroke: #e0b53a; stroke-width: 2; stroke-dasharray: 3 3"/>
+						<!-- castle hub -->
+						<g transform="translate(240 168)">
+							<rect x="-30" y="-18" width="60" height="40" rx="3" style="fill: color-mix(in srgb, var(--stone) 55%, var(--surface)); stroke: var(--ink); stroke-width: 1.5"/>
+							<rect x="-38" y="-34" width="18" height="56" rx="2" style="fill: color-mix(in srgb, var(--stone) 70%, var(--surface)); stroke: var(--ink); stroke-width: 1.5"/>
+							<rect x="20" y="-34" width="18" height="56" rx="2" style="fill: color-mix(in srgb, var(--stone) 70%, var(--surface)); stroke: var(--ink); stroke-width: 1.5"/>
+							<path d="M-8 22 V6 a8 8 0 0 1 16 0 V22 Z" style="fill: var(--ink)"/>
+							<path d="M0 -18 V-44 M0 -44 L16 -39 L0 -34" style="fill: var(--gold); stroke: var(--ink); stroke-width: 1.5"/>
+							<rect x="-30" y="30" width="60" height="6" rx="3" style="fill: var(--line)"/>
+							<rect x="-30" y="30" width="50" height="6" rx="3" style="fill: var(--done, #3f8a52)"/>
+						</g>
+						<!-- enemies: grunt (circle), runner (small), brute (square), swarm (dots) -->
+						<circle cx="60" cy="76" r="8" style="fill: #c4523a; stroke: var(--ink); stroke-width: 1.5"/>
+						<circle cx="296" cy="186" r="5" style="fill: #c4523a; stroke: var(--ink); stroke-width: 1.5"/>
+						<rect x="404" y="70" width="18" height="18" rx="3" style="fill: #8e3b2c; stroke: var(--ink); stroke-width: 1.5"/>
+						<g style="fill: #c4523a; stroke: var(--ink); stroke-width: 1">
+							<circle cx="292" cy="290" r="3.5"/><circle cx="302" cy="296" r="3.5"/><circle cx="296" cy="304" r="3.5"/><circle cx="306" cy="284" r="3.5"/>
+						</g>
+						<!-- footprints to coins -->
+						<g style="fill: var(--ink); opacity: .55">
+							<ellipse cx="24" cy="334" rx="5" ry="8" transform="rotate(70 24 334)"/>
+							<ellipse cx="46" cy="322" rx="5" ry="8" transform="rotate(70 46 322)"/>
+							<ellipse cx="68" cy="336" rx="5" ry="8" transform="rotate(70 68 336)"/>
+							<ellipse cx="90" cy="324" rx="5" ry="8" transform="rotate(70 90 324)"/>
+						</g>
+						<g style="fill: var(--gold); stroke: var(--ink); stroke-width: 1.5">
+							<circle cx="124" cy="330" r="9"/><circle cx="146" cy="326" r="9"/><circle cx="168" cy="330" r="9"/>
+						</g>
+						<text x="186" y="335" style="fill: var(--ink); font: 600 13px Inter, sans-serif">100 steps = 1 coin</text>
+					</svg>
+					<figcaption>Illustration, not a screenshot: three routes into the castle, towers on the build pads, and the walk that paid for them.</figcaption>
+				</figure>
+			</section>
+
+			<ul class="stats">
+				<li><b>431</b><span>automated game tests</span></li>
+				<li><b>74</b><span>database checks on privacy and scoring</span></li>
+				<li><b>6.4k</b><span>lines of GDScript game code</span></li>
+				<li><b>5 of 8</b><span>milestones signed off</span></li>
+				<li><b>0</b><span>step counts ever sent to the server</span></li>
+			</ul>
+
+			<section class="section">
+				<div class="section-head"><h2>The short version</h2><span class="num">01</span></div>
+				<div class="prose">
+					<p>StepQuest turns everyday walking into a fortress. Your phone's step count becomes coins, and the coins buy and upgrade towers that defend a castle against waves of enemies. Each month is a new season, with one battlefield and 20 levels. Your defence carries over from level to level, so a month of walking builds one fortress.</p>
+					<p>The players are children and younger teenagers, and the game reads their health data. That shaped everything. Steps are converted to coins on the phone and never leave it. The whole game works offline without an account. There are no ads, purchases, streaks or reminder notifications, and an under-13 can't go online until a parent agrees.</p>
+					<p>The project started from a written specification approved on 24 October 2026, with an eight-milestone roadmap that tackled the riskiest technical question first. Five milestones are complete: the game is in the hands of TestFlight testers with real steps from Apple Health and a shared leaderboard.</p>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="section-head"><h2>How the game works</h2><span class="num">02</span></div>
+				<ol class="loop">
+					<li><div class="card"><h3>Walk</h3><p>Steps are read from Apple Health, iPhone and Apple Watch combined without double-counting. Steps typed in by hand don't count.</p></div></li>
+					<li><div class="card"><h3>Earn</h3><p>Every 100 steps is a coin, plus a small bonus for opening the game on any 3 days of a week. Nothing else pays coins.</p></div></li>
+					<li><div class="card"><h3>Build</h3><p>Buy, upgrade, move and sell towers on the season's build pads, and buy charges for signature abilities.</p></div></li>
+					<li><div class="card"><h3>Defend</h3><p>A 3–5 minute battle of 5–8 waves. Towers fire on their own; you time the abilities. Lose, adjust and retry at once.</p></div></li>
+				</ol>
+
+				<div class="duel">
+					<div class="card">
+						<h3>Four towers</h3>
+						<table class="stack">
+							<thead><tr><th>Tower</th><th>Job</th><th>Ability</th></tr></thead>
+							<tr><td><b>Basic shooter</b></td><td>Cheap single-target damage</td><td class="dim">None</td></tr>
+							<tr><td><b>Cannon</b></td><td>Slow splash damage</td><td class="dim">Bomb</td></tr>
+							<tr><td><b>Frost spire</b></td><td>Slows enemies</td><td class="dim">Freeze</td></tr>
+							<tr><td><b>Spark spire</b></td><td>Damage that chains</td><td class="dim">Lightning</td></tr>
+						</table>
+					</div>
+					<div class="card">
+						<h3>Four enemies and a boss</h3>
+						<table class="stack">
+							<thead><tr><th>Enemy</th><th>Behaviour</th><th>Answer</th></tr></thead>
+							<tr><td><b>Grunt</b></td><td>Average in every way</td><td class="dim">Any tower</td></tr>
+							<tr><td><b>Runner</b></td><td>Fast and fragile</td><td class="dim">Frost</td></tr>
+							<tr><td><b>Brute</b></td><td>Tough, hits the castle hard</td><td class="dim">Bomb</td></tr>
+							<tr><td><b>Swarm</b></td><td>Many tiny enemies</td><td class="dim">Cannon, Spark</td></tr>
+							<tr><td><b>Boss</b></td><td>Splits into a Swarm when hurt</td><td class="dim">Everything</td></tr>
+						</table>
+					</div>
+				</div>
+				<p class="muted" style="color: var(--muted); max-width: 68ch; margin: 18px 0 0">Every tower has an enemy it answers, so players have a reason to mix them. Towers unlock at the first wins of Levels 2, 5 and 10 and stay unlocked for good. Boss levels sit at 10 and 20, and later levels send enemies down extra roads from new directions.</p>
+			</section>
+
+			<section class="section">
+				<div class="section-head"><h2>Designing the economy</h2><span class="num">03</span></div>
+				<div class="grid-2">
+					<div class="card">
+						<h3>Paced for a real child's week</h3>
+						<p>The design reference player has a phone only and records about 4,000 steps on a school day and 7,000 at weekends. English schools are phone-free by default, so school-day walking mostly goes unrecorded, and the game never encourages carrying a phone in school.</p>
+						<ul class="pace" aria-label="Days to afford a defence that beats Level 20 (about 1,100 coins)">
+							<li><span class="label"><span>Very active, or Apple Watch</span><span>730 coins a week · 11 days</span></span><span class="bar"><i style="width: 33%"></i><span class="target" style="left: 64%"></span></span></li>
+							<li><span class="label"><span>Reference player</span><span>370 a week · 21 days</span></span><span class="bar"><i style="width: 64%"></i><span class="target" style="left: 64%"></span></span></li>
+							<li><span class="label"><span>Light walker</span><span>235 a week · 33 days</span></span><span class="bar"><i style="width: 100%"></i><span class="target" style="left: 64%"></span></span></li>
+						</ul>
+						<p class="pace-note">Days to afford a defence that beats Level 20. The gold mark is the target: week 3. Light walkers should still reach the Level 10 boss.</p>
+					</div>
+					<div class="card">
+						<h3>Hard to outspend</h3>
+						<p>Build space is fixed for each season and sized so that a fully upgraded defence costs about 1.5 times what the reference player needs. Very active walkers reach that ceiling early, and later levels then need good placement and well-timed abilities rather than more coins. The ceiling is never shown: there's no "maxed out" message.</p>
+						<h3 style="margin-top: 22px">Tuned as data, never mid-season</h3>
+						<p>Every price, rate and threshold is one setting in a data file. Settings are versioned by season month, so a change made in November waits until 1 December and never changes the rules partway through a season. An audit traced each economy value in the spec to the file that holds it.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="section-head"><h2>Built for children</h2><span class="num">04</span></div>
+				<p class="intro">Privacy and wellbeing weren't added at the end. They're written into the spec's rules and acceptance criteria, and automated tests check them.</p>
+
+				<div class="flow">
+					<h3>What leaves the phone</h3>
+					<p>Health data stays on the device. The server learns only what a leaderboard needs.</p>
+					<div class="flow-row">
+						<div class="flow-box">
+							<h4>Stays on the iPhone</h4>
+							<ul>
+								<li>Every step count and step history</li>
+								<li>The step ledger, kept out of iCloud backups</li>
+								<li>The private "My activity" screen, built when opened and never saved</li>
+								<li>The game itself, fully playable offline</li>
+							</ul>
+						</div>
+						<div class="flow-pipe">
+							<span class="arrow" aria-hidden="true">→</span>
+							<span>per win, only</span>
+							<code>season · level · castle health</code>
+						</div>
+						<div class="flow-box">
+							<h4>Supabase, Ireland (EU)</h4>
+							<ul>
+								<li>A generated username and age band</li>
+								<li>Battle points and badges</li>
+								<li>Synced game progress, readable only by its owner</li>
+								<li>No real names, emails, birth dates or schools</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="grid-3" style="margin-top: 16px">
+					<div class="card">
+						<h3>No account needed</h3>
+						<p>The whole game plays offline. Online play is optional, through Sign in with Apple asking for no name or email.</p>
+					</div>
+					<div class="card">
+						<h3>Parents first</h3>
+						<p>The player gives an age band first. Under-13s need a parent or carer to agree before anything about them is stored online.</p>
+					</div>
+					<div class="card">
+						<h3>Safe usernames</h3>
+						<p>Names are an adjective, a noun and two digits, from approved word lists. The server holds the same lists and refuses any other name.</p>
+					</div>
+				</div>
+
+				<ul class="nevers" aria-label="Things the game never has">
+					<li>Ads</li><li>Purchases</li><li>Streaks</li><li>Countdowns</li><li>Loss warnings</li><li>Reminder notifications</li><li>Chat</li><li>Tracking</li><li>Public step counts</li>
+				</ul>
+			</section>
+
+			<section class="section">
+				<div class="section-head"><h2>Key decisions, and why</h2><span class="num">05</span></div>
+				<ol class="decisions">
+					<li class="wide">
+						<div class="card">
+							<h3>A battle that always plays out the same way</h3>
+							<p>The battle runs as a plain simulation, separate from what's on screen, at 20 ticks a second. It uses whole numbers only (positions in thousandths of a tile) and no randomness, so the same level with the same taps always ends identically, on any device.</p>
+							<p class="why"><b>Why:</b> one choice made four features simple. A save stores just the starting setup and a log of the player's taps, so closing the app mid-battle and reopening it replays to the exact same moment. Pause and 2× speed only change how fast ticks are fed in. Tests can check that an enemy dies on a particular tick. And a scripted stand-in player plays every level at different budgets to check the balance.</p>
+						</div>
+					</li>
+					<li>
+						<div class="card">
+							<h3>A step ledger that can't pay twice</h3>
+							<p>For each day, the game records how many steps it has already paid for. Each time it opens, it re-reads the last 7 days and pays only the difference. A day's paid total never goes down.</p>
+							<p class="why"><b>Why:</b> late Apple Watch syncs, re-reads, clock changes and time-zone changes can't pay the same steps twice or take coins away. The ledger is written before the save, so a crash between the two can only underpay, never double-pay.</p>
+						</div>
+					</li>
+					<li>
+						<div class="card">
+							<h3>Our own HealthKit plugin</h3>
+							<p>No maintained Godot 4 HealthKit plugin existed, so we wrote one: a small C++ extension with Swift that reads daily step totals, skips hand-typed entries, and also handles Sign in with Apple.</p>
+							<p class="why"><b>Why:</b> the game needs only daily totals, and a few hundred lines of our own are far easier to audit for privacy than a large third-party plugin. It was milestone 1, so if it had failed the project would have stopped before anything else was built.</p>
+						</div>
+					</li>
+					<li>
+						<div class="card">
+							<h3>The server does the scoring</h3>
+							<p>Players can't write to the leaderboard. The game sends a season, a level and the castle health left; a database function checks it, works out the points and writes the row. Wins out of order, from another season or with impossible health are refused.</p>
+							<p class="why"><b>Why:</b> one round trip, protected by the database's own row-level security rules. A test checks that the server's points tables still match the game's.</p>
+						</div>
+					</li>
+					<li>
+						<div class="card">
+							<h3>Everything is data</h3>
+							<p>Towers, enemies, abilities, levels, waves, routes, badges, usernames and every economy value live in JSON files, checked when the game starts. A mistake becomes a readable error naming the file and field, not a crash mid-battle.</p>
+							<p class="why"><b>Why:</b> next month's season is mostly new data and art, not new code, and JSON is easy to review and ready to move into remote configuration.</p>
+						</div>
+					</li>
+					<li class="wide">
+						<div class="card">
+							<h3>Stopping one phone's wins being handed around</h3>
+							<p>Testing showed a loophole: sign friends in one after another on the same phone, and each new account would inherit its wins. The fix: each account has its own game on the phone. The first account to sign up takes the phone's game, once only. Later accounts start fresh, and the game played while signed out is never given to anyone.</p>
+							<p class="why"><b>Why:</b> it keeps Sign out (which the first TestFlight build had to leave out) without reopening the loophole. The step ledger stays one file per phone, so steps are never paid twice whichever game is in use.</p>
+						</div>
+					</li>
+				</ol>
+			</section>
+
+			<section class="section">
+				<div class="section-head"><h2>How it's built</h2><span class="num">06</span></div>
+				<p class="intro">One codebase in Godot 4, a thin native plugin per platform, and Supabase for the optional online features. Four layers, each depending only on those below it.</p>
+				<ul class="layers">
+					<li style="--c: var(--gold)"><span><b>Presentation</b><code>src/game, src/ui</code></span><span>Screens, drawing and touch input. Enemies glide between ticks; every unit keeps its own outline, so nothing relies on colour alone.</span><span class="never">changes battle state except through commands</span></li>
+					<li style="--c: var(--frost)"><span><b>Platform services</b><code>src/steps, src/online, plugins/ios</code></span><span>Reads Apple Health, signs in with Apple, talks to Supabase. Android's Health Connect will be a third version of the same step interface.</span><span class="never">sends steps off the phone</span></li>
+					<li style="--c: var(--grass)"><span><b>Economy and saves</b><code>src/economy</code></span><span>Coins, the shop, the step ledger, monthly seasons, badges, saving and resuming.</span><span class="never">draws anything</span></li>
+					<li style="--c: var(--stone)"><span><b>Rules</b><code>src/sim</code></span><span>Runs battles, works out stars and points, loads and checks content.</span><span class="never">touches the screen, reads the clock or uses randomness</span></li>
+				</ul>
+			</section>
+
+			<section class="section">
+				<div class="section-head"><h2>How the project is run</h2><span class="num">07</span></div>
+				<p class="intro">Eight milestones, each ending in something that can be run and checked on a real iPhone before the next begins. Three release stages each answer one question before the next adds cost: is it fun, does the economy work with real steps, and is it ready for the public?</p>
+				<ol class="roadmap">
+					<li class="done"><span class="n">1 <em>Done</em></span><h3>Feasibility test</h3><p>Today's steps from Apple Health, shown in a bare Godot app on a real iPhone.</p></li>
+					<li class="done"><span class="n">2 <em>Done</em></span><h3>Battle core</h3><p>Data-driven, deterministic simulation; one tower, one enemy, win and defeat.</p></li>
+					<li class="done"><span class="n">3 <em>Done</em></span><h3>Full battle rules</h3><p>All towers, enemies and the boss; upgrades, abilities, waves, 2× speed, stars and points.</p></li>
+					<li class="done"><span class="n">4 <em>Done</em></span><h3>Season prototype</h3><p>20 levels, unlocks, the shop, save and resume. Playtested to answer "is it fun?"</p></li>
+					<li class="done"><span class="n">5 <em>Done</em></span><h3>Real steps and a leaderboard</h3><p>HealthKit, the step ledger, tutorial, badges, season reset, accounts and server scoring. A week on TestFlight.</p></li>
+					<li class="now"><span class="n">6 <em>In progress</em></span><h3>Online features</h3><p>Sign out and progress sync are in; weekly boards, profiles and remote configuration next.</p></li>
+					<li><span class="n">7 <em>Next</em></span><h3>Test season</h3><p>A full month with testers to tune pacing to land near week 3.</p></li>
+					<li><span class="n">8 <em>Later</em></span><h3>Version 1</h3><p>Data-protection adviser review, accessibility pass, commissioned art, App Store.</p></li>
+				</ol>
+
+				<div class="grid-2" style="margin-top: 16px">
+					<div class="card">
+						<h3>A living decision log</h3>
+						<p style="margin-bottom: 18px">Every change after the spec was approved is recorded with its reason, and the spec is updated to match. A few entries:</p>
+						<ol class="log">
+							<li><time>25 October</time><p>The tutorial becomes required.</p><p class="dim">A brand-new player has no coins until they walk, so the tutorial gives two free towers on marked pads, and coins still come only from steps.</p></li>
+							<li><time>26 October</time><p>First TestFlight round is adults on the team only.</p><p class="dim">Children join later, with parents' consent, once the approval method is agreed.</p></li>
+							<li><time>18 November</time><p>Only the current coin balance is synced, never a history.</p><p class="dim">Coins earned are roughly steps ÷ 100, so a daily history would be close to step data.</p></li>
+							<li><time>19 November</time><p>Sign out returns, with a game per account.</p><p class="dim">Closes the shared-phone loophole found in testing.</p></li>
+						</ol>
+					</div>
+					<div class="card">
+						<h3>Every rule traced to a check</h3>
+						<p style="margin-bottom: 14px">Each milestone ends with a rules check: every rule from the spec, listed with the automated test, database test or on-phone check that covers it, and its status.</p>
+						<table class="checks stack">
+							<thead><tr><th>Kind of check</th><th>What it covers</th></tr></thead>
+							<tr><td><b>GUT tests</b></td><td>Battle rules, economy, the step ledger, the online flow with a fake server and a fake Apple, and screens</td></tr>
+							<tr><td><b>pgTAP tests</b></td><td>No column could hold steps or personal details; players can't write results; scoring and sync</td></tr>
+							<tr><td><b>Balance bot</b></td><td>A scripted player beats every level at different coin budgets</td></tr>
+							<tr><td><b>Playtest</b></td><td>3–5 testers, no help given: "is it fun?"</td></tr>
+							<tr><td><b>TestFlight week</b></td><td>Testers compare StepQuest's coins with Apple Health each night</td></tr>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="section-head"><h2>Tools and technologies</h2><span class="num">08</span></div>
+				<div class="card">
+					<table class="stack">
+						<tr><td><b>Game engine</b></td><td>Godot 4 with GDScript, chosen so Android can follow without a rewrite</td></tr>
+						<tr><td><b>Native iOS</b></td><td>Swift and C++ through a Godot GDExtension (godot-cpp, SCons)</td></tr>
+						<tr><td><b>Apple frameworks</b></td><td>HealthKit statistics queries, Sign in with Apple</td></tr>
+						<tr><td><b>Online</b></td><td>Supabase: Postgres with row-level security and security-definer functions, Auth, migrations in the repository</td></tr>
+						<tr><td><b>Testing</b></td><td>GUT 9.7 for the game, pgTAP for the database, a balance-report tool, written on-device checklists</td></tr>
+						<tr><td><b>Release</b></td><td>Xcode export, signing and HealthKit capability, App Store Connect, TestFlight</td></tr>
+						<tr><td><b>Art</b></td><td>Kenney's CC0 placeholder art for testing; commissioned art planned for Version 1</td></tr>
+						<tr><td><b>Approach</b></td><td>AI-assisted development with Claude Code in small, tested steps, with the studio writing the spec, making every product decision and testing on a real device</td></tr>
+					</table>
+				</div>
+			</section>
+
+			<section class="closing">
+				<h2>Building something that handles sensitive data?</h2>
+				<p>Health data, children's accounts, or rules that have to hold up under testing: we'd be happy to talk through how we'd approach it.</p>
+				<div class="actions">
+					<a class="btn primary" href="mailto:hello@daxinteractive.com?subject=Project%20enquiry">Get in touch</a>
+					<a class="btn" href="/portfolio/">← All work</a>
+				</div>
+			</section>
+		</main>
+
+		<footer class="foot">
+			<span>© 2026 DAX Interactive</span>
+			<a href="#top">Back to top ↑</a>
+		</footer>
+	</div>
+</body>
+</html>

@@ -35,3 +35,4 @@ Client portfolio (unlinked, `noindex`):
 
 - `portfolio/index.html`: client portfolio home (own style in `portfolio/portfolio.css`)
 - `portfolio/quiltz/index.html`: Quiltz case study (Quiltz styles plus `portfolio/quiltz/case.css`, screenshots in `portfolio/quiltz/images/`)
+- `portfolio/stepquest/index.html`: StepQuest case study (own style in `portfolio/stepquest/case.css`; drawn from the game repo's `StepQuest2/docs/`)
